@@ -1,0 +1,7 @@
+{
+  "name": "parking-finder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
