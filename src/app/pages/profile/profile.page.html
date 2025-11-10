@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="profile$ | async as profile">
+  <div class="profile-header">
+    <ion-avatar (click)="changeAvatar()">
+      <img alt="User avatar" [src]="profile.avatarUrl" />
+    </ion-avatar>
+    
+    <h2 (click)="editName()" class="editable-field">
+      {{ profile.name }}
+      <ion-icon name="create-outline" size="small"></ion-icon>
+    </h2>
+
+    <p>msdanurag65@email.com</p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>My Vehicles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="car-sport-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h3>Maruti Swift</h3>
+            <p>PB 08 CX 1234</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="car-sport-outline" slot="start"></ion-icon>
+          <ion-label>
+            <h3>Honda City</h3>
+            <p>PB 08 AZ 5678</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="danger" (click)="logout()">
+    Log Out
+  </ion-button>
+</ion-content>

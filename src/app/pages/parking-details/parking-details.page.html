@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/map"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ lot?.name || 'Details' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="lot">
+    <h1>{{ lot.name }}</h1>
+    <p>{{ lot.address }}</p>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Availability</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>{{ lot.availableSpots }} / {{ lot.totalSpots }} spots free</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Pricing</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>₹{{ lot.pricePerHour }} per hour</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" shape="round" (click)="bookNow()">Book Now</ion-button>
+  </div>
+</ion-content>

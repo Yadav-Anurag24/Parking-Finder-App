@@ -3,34 +3,37 @@ import { TabsPage } from './tabs.page';
 
 export const routes: Routes = [
   {
-    path: 'tabs',
+    // This path is now EMPTY because the parent route already handles "tabs"
+    path: '', 
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'map',
         loadComponent: () =>
-          import('../tab1/tab1.page').then((m) => m.Tab1Page),
+          import('../pages/map/map.page').then((m) => m.MapPage),
       },
       {
-        path: 'tab2',
+        path: 'bookings',
         loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+          import('../pages/bookings/bookings.page').then((m) => m.BookingsPage),
       },
       {
-        path: 'tab3',
+        path: 'profile',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../pages/profile/profile.page').then((m) => m.ProfilePage),
       },
       {
+        // The redirect is now relative to this path
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'map',
         pathMatch: 'full',
       },
     ],
   },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full',
-  },
+  // This top-level redirect is no longer needed in this file
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/map',
+  //   pathMatch: 'full',
+  // },
 ];

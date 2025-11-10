@@ -1,0 +1,36 @@
+/* This targets the scrollable content area of the page */
+ion-content {
+  /* You can use a subtle gradient */
+  --background: linear-gradient(to bottom, #4a54e2, #1a237e);
+
+  /* Or use a background image */
+  /* --background: url('/assets/your-image.jpg') no-repeat center center / cover; */
+}
+
+/* We also need to make the list items transparent to see the background */
+ion-list {
+  background: transparent;
+  --ion-item-background: transparent;
+}
+
+/* Make the text readable on the dark background */
+.login-container h1, .login-container p {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Modern "filled" input style */
+ion-item {
+  --background: var(--ion-color-light-shade, #f0f0f0); // A light gray fill
+  --border-radius: 12px; // Rounded corners
+  --border-color: transparent; // No bottom border
+  --highlight-color-focused: var(--ion-color-primary); // Use theme color on focus
+  margin-bottom: 16px; // Add spacing
+}
+
+/* This is needed for the dark mode theme */
+body[data-theme='dark'] {
+  ion-item {
+    --background: var(--ion-color-light-tint, #2d2d2d);
+  }
+}

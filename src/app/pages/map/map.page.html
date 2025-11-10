@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Find Parking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <google-map 
+    *ngIf="apiLoaded"
+    #map
+    height="100%" 
+    width="100%"
+    [center]="center"
+    [zoom]="zoom"
+    [options]="mapOptions">
+  </google-map>
+</ion-content>

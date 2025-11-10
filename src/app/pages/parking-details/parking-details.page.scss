@@ -1,0 +1,15 @@
+ion-card {
+  /* Gives the card a modern, rounded look */
+  border-radius: 16px;
+
+  /* Adds a subtle shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Remove the default margin to make it sleek */
+  margin: 16px 0;
+}
+
+ion-card-title {
+  color: var(--ion-color-primary); /* Use our new theme color */
+  font-weight: 600;
+}
